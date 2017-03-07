@@ -10,12 +10,7 @@ var articles ={
         title: 'Article One| Sushant Garg',
         heading: 'Article One',
         date: '7 March, 2017' ,
-        content: `
-                <p>This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One.</p>
-                    
-                    <p>This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One.</p>
-                    
-                    <p>This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One.</p>'
+        content:`<p>This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One.</p>'
             },
     'article-two': {
         title: 'Article Two| Sushant Garg',
