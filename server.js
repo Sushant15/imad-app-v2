@@ -21,7 +21,7 @@ var articles ={
     'article-three': {
         title: 'Article Three| Sushant Garg',
         heading: 'Article Three',
-        date: '7 March, 2017' ,
+        date: '15 April, 2017' ,
         content: '<p>This is my Article Three. This is my Article One.</p>'
     }
 };
@@ -58,6 +58,7 @@ var htmlTemplate='
     </body>
 </html>
 '
+return htmlTemplate;
 };
 
 app.get('/', function (req, res) {
@@ -65,7 +66,6 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function(req, res){
-    //articlename== article-one
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
