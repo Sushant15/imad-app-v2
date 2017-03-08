@@ -5,12 +5,15 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articles ={
+var articles = {
     'article-one': {
         title: 'Article One| Sushant Garg',
         heading: 'Article One',
-        date: '7 March, 2017' ,
-        content:`<p>This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One.</p>'
+        date: '7 March, 2017',
+        content:`
+            <p>
+                This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One. This is my Article One.
+            </p>`
             },
     'article-two': {
         title: 'Article Two| Sushant Garg',
@@ -32,7 +35,7 @@ var date =data.date;
 var heading =data.heading;
 var content =data.content;
 
-var htmlTemplate='
+var htmlTemplate=`
     <html>
     <head>
         <title>${title} </title>
@@ -57,9 +60,9 @@ var htmlTemplate='
         </div>
     </body>
 </html>
-';
+` ;
 return htmlTemplate;
-};
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -79,7 +82,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 
-var port = 8081; // Use 8080 for local development because you might already have apache running on 80
-app.listen(8081, function () {
-  console.log(`IMAD course app listening on port ${port}!`);
+var port = 8080; // Use 8080 for local development because you might already have apache running on 80
+app.listen(8080, function () {
+  console.log('IMAD course app listening on port ${port}!');
 });
