@@ -7,5 +7,5 @@ element.innerHTML = 'New Value';
 //get the image moving
 var img = document.getElementById('madi');
 img.onClick = function() {
-    img.style.marginLeft = '100px' ;
+    img.style.marginLeft = '100px';
 };
