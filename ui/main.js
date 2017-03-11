@@ -33,7 +33,7 @@ submit.onclick = function() {
     var names= ['Name 1' , 'Name 2','Name 3' , 'Name 4'];
     var list= '';
     for(var i=0; i<names.length; i++){
-        list+= '<li>' + name[i] + '</li>';
+        list+= '<li>' + names[i] + '</li>';
     }
     var ul = document.getElementById('namelist');
     ul.innerHTML = list;
