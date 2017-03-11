@@ -30,9 +30,9 @@ var submit= document.getElementById('submit_btn');
 submit.onclick = function() {
     // Make a request to server and send the name
     //Capture the list of the name and render the list
-    var name= ['Name 1' , 'Name 2','Name 3' , 'Name 4'];
+    var names= ['Name 1' , 'Name 2','Name 3' , 'Name 4'];
     var list= '';
-    for(var i=0;i<name.lenght;i++){
+    for(var i=0;i<names.lenght;i++){
         list+= '<li>' + name[i] + '</li>';
     }
     var ul = document.getElementById('namelist');
