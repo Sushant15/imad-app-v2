@@ -3,7 +3,7 @@ var button = document.getElementById('counter');
 
 button.onclick = function() {
     
-    // Make a request to the counter endpoint
+    // Create a request object
     var request = new XMLHttpRequest();
     // Capture the response and store it in s variable
     request.onreadystatechange = function() {
@@ -28,13 +28,30 @@ var nameInput= document.getElementById('name');
 var name= nameInput.value;
 var submit= document.getElementById('submit_btn');
 submit.onclick = function() {
-    // Make a request to server and send the name
-    //Capture the list of the name and render the list
-    var names= ['Name 1' , 'Name 2','Name 3' , 'Name 4'];
-    var list= '';
-    for(var i=0; i<names.length; i++){
-        list+= '<li>' + names[i] + '</li>';
+    
+    // Create a request object
+    var request = new XMLHttpRequest();
+    // Capture the response and store it in s variable
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            //Take some action
+            if(request.status === 200) {
+                //Capture the list of the name and render the list
+                var names= request.responseText;
+                names= JSON.parse(names);
+                var names= ['Name 1' , 'Name 2','Name 3' , 'Name 4'];
+                var list= '';
+                for(var i=0; i<names.length; i++){
+                    list+= '<li>' + names[i] + '</li>';
+                }
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;
+            }
+        }
+        // Not done yet
     }
-    var ul = document.getElementById('namelist');
-    ul.innerHTML = list;
+    
+    // Make the request
+    request.open('GET', 'http://sushant15.imad.hasura-app.io/submit-name?name=' + name, true);
+    request.send(null);
 };
